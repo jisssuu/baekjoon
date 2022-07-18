@@ -60,3 +60,23 @@ for (let i = 0; i < count; i++) {
   sum += Sejun[i];
 }
 console.log(sum / count);
+
+//8958
+//문제를 이해하는 것에 있어서 문제가 발생..
+let input = require('fs').readFileSync('dev/stdin').toString().split('\n');
+let count = input[0];
+let answer = '';
+
+for (let i = 1; i <= count; i++) {
+  let oCount = 1;
+  let sumCount = 0;
+  for (let j = 0; j <= input[i].length - 1; j++) {
+    if (input[i][j] == 'O') {
+      sumCount += oCount;
+      oCount++;
+    } else {
+      oCount = 1;
+    }
+  }
+  console.log(sumCount);
+}
